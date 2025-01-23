@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "global.d.ts"],
+  "include": ["src", "global.d.ts", "./jest-setup.ts", "src/components/Header/Header.test.tsx", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

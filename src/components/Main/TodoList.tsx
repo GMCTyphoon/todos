@@ -8,9 +8,9 @@ export const TodoList: FC<TodoListProps> = ({
   toggleTodo,
 }) => {
   let listClasses =
-    'divide-y divide-orange-500 overflow-y-auto p-2 transition-all duration-500';
+    'divide-y divide-orange-500 p-2 transition-all duration-500';
   if (isVisible) {
-    listClasses += ' max-h-96';
+    listClasses += ' max-h-96 overflow-y-auto';
   } else {
     listClasses += ' max-h-0 opacity-0';
   }
