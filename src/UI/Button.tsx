@@ -1,11 +1,11 @@
-type Props = {
+interface ButtonProps {
   children: React.ReactNode;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabled: boolean;
   active: boolean;
-};
+}
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<ButtonProps> = ({
   disabled,
   active,
   children,

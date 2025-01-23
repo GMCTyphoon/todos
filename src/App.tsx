@@ -1,13 +1,11 @@
-import { Header } from './components/Header';
-import { TodoList } from './components/TodoList';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
 
 export default function App() {
   return (
     <>
       <Header />
-      <main>
-        <TodoList />
-      </main>
+      <Main />
     </>
   );
 }

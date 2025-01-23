@@ -1,13 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
+import { TodoItemProps } from './types';
 
-type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-  toggleTodo: () => void;
-};
-
-export const TodoItem: React.FC<Todo> = ({ toggleTodo, ...todo }) => {
+export const TodoItem: React.FC<TodoItemProps> = ({ toggleTodo, ...todo }) => {
   let todoTextClasses = '';
   if (todo.completed) {
     todoTextClasses += ' line-through text-stone-400';
@@ -20,10 +14,10 @@ export const TodoItem: React.FC<Todo> = ({ toggleTodo, ...todo }) => {
         <label className="flex items-center cursor-pointer relative">
           <input
             checked={todo.completed}
-            onChange={toggleTodo}
+            id={todo.id.toString()}
+            onChange={() => toggleTodo(todo.id)}
             type="checkbox"
             className="peer h-6 w-6 cursor-pointer transition-all appearance-none rounded-full bg-slate-100 shadow hover:shadow-md border border-slate-300 checked:bg-amber-700 checked:border-slate-800"
-            id="check-custom-style"
           />
           <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <svg
